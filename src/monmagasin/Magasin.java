@@ -88,7 +88,7 @@ public class Magasin {
     public boolean ChercherProduit(Produit p) {
         Iterator<Produit> iter = h.iterator();
         boolean ok = false;
-        while (iter.hasNext()) {
+        while ((iter.hasNext()&&(!ok))) {
             Produit prd = iter.next();
             if (prd.Comparer(p)) {
                 ok = true;
@@ -98,6 +98,42 @@ public class Magasin {
 
         return ok;
     }
+    
+    
+    public void supprimerProduit(Produit p)
+    {
+        Iterator<Produit> iter=h.iterator();
+        Produit prd=new Produit();
+        boolean ok=false;
+        while((iter.hasNext())&&(!ok))
+        {
+            prd=iter.next();
+            ok=Produit.Comparer(prd, p);
+        }
+        
+            if(ok)
+            {
+                h.remove(prd);
+                System.out.println("product deleted...");
+            }
+            else
+            {System.out.println("product does not exist ...");}
+    }
+    
+    
+    public static void Comparer(Magasin m1,Magasin m2)
+    {
+    
+        if(m1.getH().size()>m2.getH().size())
+        {System.out.println("store with id: "+m1.getId()+" has more products then "+m2.getId());}
+        
+        if(m1.getH().size()==m2.getH().size())
+        {System.out.println("both stores has the same number of products");}
+        
+        if(m1.getH().size()<m2.getH().size())
+        {System.out.println("store with id: "+m2.getId()+" has more products then "+m1.getId());}
+    }
+            
     
     
 }

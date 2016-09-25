@@ -28,13 +28,15 @@ public class MonMagasin {
                 System.out.println("1:to add product");
                 System.out.println("2:to list products");
                 System.out.println("3:to search product");
+                System.out.println("4:to delete product");
                 cmd = s.next().charAt(0);
-            } while ((cmd != '0') && (cmd != '1') && (cmd != '2') && (cmd != '3'));
+            } while ((cmd != '0') && (cmd != '1') && (cmd != '2') && (cmd != '3')&&(cmd!='4'));
 
             switch (cmd) {
                 case '1':m.AjouterProduit(Produit.SaisieProduit());break;
                 case '2':m.AfficherProduit();break;
                 case '3':m.ChercherProduit(Produit.SaisieProduit());break;
+                case '4':m.supprimerProduit(Produit.SaisieProduit());break;
             }
         } while (cmd != '0');
        
