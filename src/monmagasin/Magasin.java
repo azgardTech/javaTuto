@@ -123,7 +123,7 @@ public class Magasin {
     
     public static void Comparer(Magasin m1,Magasin m2)
     {
-    
+     
         if(m1.getH().size()>m2.getH().size())
         {System.out.println("store with id: "+m1.getId()+" has more products then "+m2.getId());}
         

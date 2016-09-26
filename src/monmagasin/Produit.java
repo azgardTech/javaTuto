@@ -84,11 +84,11 @@ private  String dateExpiration;
     public static Produit SaisieProduit()
     {Produit p=new Produit();
     
-     p.setId(Integer.parseInt(StringChecker("[0-9]+","id :")));
+     p.setId(Integer.parseInt(StringChecker("^[0-9]+$","id :")));
      p.setLibellé(StringChecker("\\w{3,}","libellé :"));
      p.setMarque(StringChecker("\\w{3,}","marque :"));
-     p.setDateExpiration(StringChecker("\\d{2}-\\d{2}-\\d{4}","date d'exp :"));
-     p.setPrix(Double.parseDouble(StringChecker("\\d+(.\\d+)?","prix :")));
+     p.setDateExpiration(StringChecker("^\\d{2}-\\d{2}-\\d{4}$","date d'exp :"));
+     p.setPrix(Double.parseDouble(StringChecker("^\\d+(.\\d+)?$","prix :")));
      
      
        
