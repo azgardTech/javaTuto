@@ -18,7 +18,7 @@ public class MonMagasin {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       Scanner s = new Scanner(System.in);
+  /*     Scanner s = new Scanner(System.in);
         char cmd = ' ';
         Magasin m=new Magasin(0,"Menzah 6",50);
         do {
@@ -38,9 +38,9 @@ public class MonMagasin {
                 case '3':m.ChercherProduit(Produit.SaisieProduit());break;
                 case '4':m.supprimerProduit(Produit.SaisieProduit());break;
             }
-        } while (cmd != '0');
+        } while (cmd != '0');*/
        
-
+  
        
 
     }
