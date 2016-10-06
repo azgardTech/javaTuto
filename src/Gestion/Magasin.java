@@ -5,6 +5,8 @@
  */
 package Gestion;
 
+import GestionProduit.ProduitP5;
+import Rh.Employe;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -18,7 +20,9 @@ public class Magasin {
     private String nom;
     private String adresse;
     private int capacité;
-    private HashSet<Produit> h;
+    private HashSet<ProduitP5> h;
+    private HashSet<Employe> e;
+    
 
     public Magasin() {
     }
@@ -28,7 +32,8 @@ public class Magasin {
         this.nom = nom;
         this.adresse = adresse;
         this.capacité = capacité;
-        this.h = new HashSet<Produit>();
+        this.h = new HashSet<ProduitP5>();
+        this.e= new HashSet<Employe>();
 
     }
 
@@ -51,7 +56,7 @@ public class Magasin {
         return capacité;
     }
 
-    public HashSet<Produit> getH() {
+    public HashSet<ProduitP5> getH() {
         return h;
     }
 
@@ -74,11 +79,11 @@ public class Magasin {
         this.capacité = capacité;
     }
 
-    public void setH(HashSet<Produit> h) {
+    public void setH(HashSet<ProduitP5> h) {
         this.h = h;
     }
 
-    public void AjouterProduit(Produit P) {
+    public void AjouterProduit(ProduitP5 P) {
         if (this.h.size() < capacité) {
             h.add(P);
 
@@ -98,19 +103,30 @@ public class Magasin {
 
     public void AfficherMagasinDetails() {
         AfficherMagasin();
-        Iterator<Produit> iter = h.iterator();
-        Produit p=new Produit();
+        Iterator<ProduitP5> iter = h.iterator();
+        ProduitP5 p=new ProduitP5();
+        System.out.println("***Produit***");
         while (iter.hasNext()) {
             p = iter.next();
             System.out.println(p.toString());
         }
+        
+        
+        System.out.println("***Employé***");
+        Employe ep;
+        Iterator<Employe> iterat=e.iterator();
+        while(iterat.hasNext()){
+           ep=iterat.next();
+            System.out.println(ep.toString());
+        }
     }
 
-    public boolean ChercherProduit(Produit p) {
-        Iterator<Produit> iter = h.iterator();
+    public boolean ChercherProduit(ProduitP5 p) {
+        Iterator<ProduitP5> iter = h.iterator();
         boolean ok = false;
+         ProduitP5 prd;
         while ((iter.hasNext() && (!ok))) {
-            Produit prd = iter.next();
+            prd = iter.next();
             if (prd.Comparer(p)) {
                 ok = true;
             }
@@ -120,13 +136,13 @@ public class Magasin {
         return ok;
     }
 
-    public boolean supprimerProduit(Produit p) {
-        Iterator<Produit> iter = h.iterator();
-        Produit prd = new Produit();
+    public boolean supprimerProduit(ProduitP5 p) {
+        Iterator<ProduitP5> iter = h.iterator();
+        ProduitP5 prd = new ProduitP5();
         boolean ok = false;
         while ((iter.hasNext()) && (!ok)) {
             prd = iter.next();
-            ok = Produit.Comparer(prd, p);
+            ok = ProduitP5.Comparer(prd, p);
         }
         
         if (ok)
@@ -158,6 +174,82 @@ public class Magasin {
         Util.Core.Saisie("^\\w{10,}$", "adresse: "),
         Integer.parseInt(Util.Core.Saisie("^\\d{1,}$","capacité: ")));
         return m;
+    }
+
+    /**
+     * @return the e
+     */
+    public HashSet<Employe> getE() {
+        return e;
+    }
+
+    /**
+     * @param e the e to set
+     */
+    public void setE(HashSet<Employe> e) {
+        this.e = e;
+    }
+    
+    
+    public boolean ajouterEmp(Employe emp)
+    {
+        boolean ok=false;
+        
+        Iterator<Employe> iter = e.iterator();
+        Employe em;
+        while ((iter.hasNext() && (!ok))) {
+             em = iter.next();
+            if (em.equals(emp)) {
+                ok = true;
+            }
+          
+           
+        
+        
+    }
+        
+        if(!ok)
+        this.getE().add(emp);
+    return !ok;
+    }
+    
+    
+    
+    public boolean supprimerEmp(Employe emp)
+    {
+        boolean ok=false;
+        
+        Iterator<Employe> iter = e.iterator();
+        Employe em;
+        while ((iter.hasNext() && (!ok))) {
+             em = iter.next();
+            if (em.equals(emp)) {
+                ok = true;
+            }
+           if(ok) 
+           {e.remove(emp);}
+        
+        
+    }
+    return ok;
+    }
+    
+    
+    
+        public boolean rechercheEmp(Employe emp)
+    {
+        boolean ok=false;
+        
+        Iterator<Employe> iter = e.iterator();
+        Employe em;
+        while ((iter.hasNext() && (!ok))) {
+             em = iter.next();
+            if (em.equals(emp)) {
+                ok = true;
+            }
+            
+    }
+    return ok;
     }
 
 }

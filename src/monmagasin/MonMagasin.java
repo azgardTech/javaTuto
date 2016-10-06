@@ -5,7 +5,12 @@
  */
 package monmagasin;
 
+import Gestion.Magasin;
+import GestionProduit.Fruit;
+import GestionProduit.Legume;
+import Rh.Vendeur;
 import java.util.Scanner;
+import GestionProduit.Interface.ICritere;
 
 /**
  *
@@ -39,9 +44,29 @@ public class MonMagasin {
                 case '4':m.supprimerProduit(Produit.SaisieProduit());break;
             }
         } while (cmd != '0');*/
-       
+     
   
        
+Magasin m=new Magasin(1,"monop","menzah6",50);
+        System.out.println(m.ajouterEmp(new Vendeur(1,"ali","manar",5,5)));
+m.ajouterEmp(new Vendeur(2,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(3,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(4,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(5,"ali","manar",5,5));
 
+m.AjouterProduit(new Fruit(1,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(2,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(3,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(4,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(5,"banane",3,"Janvier"));
+m.AjouterProduit(new Legume(6,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(7,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(8,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(9,"tomate",3,"Janvier"));
+
+
+m.AfficherMagasinDetails();
+
+        
     }
 }

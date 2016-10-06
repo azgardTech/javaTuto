@@ -82,9 +82,25 @@ public abstract class Employe {
     }
     
     
+    
      public abstract double calculerSalaire();
      
- 
+     
+     @Override
+     public String toString()
+     {
+         
+         return "type : "+this.getClass().getSimpleName()+"\n id : "+this.getId()+"\n nom : "+this.getNom()+"\n adresse : "
+                 +this.getAdresse()+"\n nombre d'heure : "+this.getNbrDHeures();
+     }
+
+
+    
+
+  
+     
+  
+        
     
     
     

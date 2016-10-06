@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+int id, String lib, double qte, String saison
+
+
+Magasin m=Magasin.SaisieMagasin("1","monop","menzah6","50");
+m.ajouterEmp(new Vendeur(1,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(2,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(3,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(4,"ali","manar",5,5));
+m.ajouterEmp(new Vendeur(5,"ali","manar",5,5));
+
+m.AjouterProduit(new Fruit(1,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(2,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(3,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(4,"banane",3,"Janvier"));
+m.AjouterProduit(new Fruit(5,"banane",3,"Janvier"));
+m.AjouterProduit(new Legume(6,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(7,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(8,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(9,"tomate",3,"Janvier"));
+m.AjouterProduit(new Legume(10,"tomate",3,"Janvier"));
+
+
+
+
+<root>
+    
+</root>

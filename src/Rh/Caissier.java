@@ -41,6 +41,10 @@ public class Caissier extends Employe {
     }
 
     
+    @Override
+    public String toString()
+    {return super.toString()+ "numero de caissse : "+this.getNumeroDeCaisse();}
+    
     public static Caissier SaisieEmp()
     {
         Caissier c= new Caissier(Integer.parseInt(Util.Core.Saisie("^\\d{1,}$","id : ")),
@@ -51,6 +55,14 @@ public class Caissier extends Employe {
         
         return c;
     }
+
+        @Override
+    public boolean equals(Object obj) {
+       
+        Caissier c=(Caissier) obj;
+        return this.getId()==c.getId(); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
   
     
